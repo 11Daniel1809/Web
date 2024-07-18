@@ -90,3 +90,7 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+#contacto {
+    margin-left: 60px;
+}
