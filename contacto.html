@@ -95,24 +95,58 @@
                  opción para seleccionar una opción de varias posibles. -->
                     <p>
                         <label>Experiencia:
-                            <input type="radio" name="experiencia" 
-                            value="1" checked> 1 Año
+                            <input type="radio" name="experiencia" value="1" checked> 1 Año
 
-                            <input type="radio" name="experiencia" 
-                            value="2"> 2 Años
+                            <input type="radio" name="experiencia" value="2"> 2 Años
 
-                            <input type="radio" name="experiencia" 
-                            value="3"> 3 Años
+                            <input type="radio" name="experiencia" value="3"> 3 Años
 
-                            <input type="radio" name="experiencia" 
-                            value="más de 3"> Más de 3 Años
-                            
+                            <input type="radio" name="experiencia" value="más de 3"> Más de 3 Años
+
                         </label>
 
                     </p>
+                </div>
 
+                <div>
+                    <h3>Fecha de nacimiento</h3>
+                    <!--date Este valor genera un campo de entrada para insertar una fecha. -->
+                    <input type="date" name="fecha" id="calendario">
+                </div>
+                <div>
+                    <h3>Color</h3>
+                    <!--color Este valor genera un campo
+                de entrada para insertar un color. -->
+                    <input type="color" name="micolor" value="#99BB00">
 
+                </div>
 
+                <div>
+                    <!--<textarea> Este elemneto crea un campo de entrada para insertar múltiples líneas de texto. 
+                        El tamaño se puede declarar en números enteros
+                        usando los atributos rows y cols -->
+                    <p>
+                        <label>Texto: <textarea name="texto" cols="50" rows="6"></textarea>
+                        </label>
+                    </p>
+                </div>
+                <div>
+                    <!--<select> Este elemento crea una lista
+                        de opciones que el usuario puede elegir. 
+                        Trabja junto a el elemento <option>
+                        para definir cada opción -->
+                    <label for="listado">Libros: </label>
+                    <select name="libro" id="listado">
+                        <option value="1">IT</option>
+                        <option value="2">Carrie</option>
+                        <option value="3">El Resplandor</option>
+                        <option value="4">Misery</option>
+                    </select>
+                </div>
+                <div>
+                    <!-- submit Este valor genera un botón para
+                 enviar el formulario -->
+                    <p><input type="submit" value="Enviar"></p>
                 </div>
 
 
@@ -132,3 +166,23 @@
 </body>
 
 </html>
+
+<script>
+    //Creo un objeto Date para obtener fecha y hora actual
+    var fechaActual = new Date();
+
+    var dia = fechaActual.getDate();//obtengo el dia
+    var mes = fechaActual.getMonth() + 1;//obtengo el mes 
+    var año = fechaActual.getFullYear();//obtengo el año
+
+    if (mes < 10) {
+        mes = "0" + mes
+    }
+
+    if (dia < 10) {
+        dia = "0" + dia
+    }
+
+    var fechaFormateada = año + "-" + mes + "-" + dia
+    document.getElementById('calendario').value = fechaFormateada
+</script>
